@@ -17,8 +17,10 @@ def desarrollar_conversion(operacion):
        elif operacion == "metros_a_pies":
                 resultado = num1 * 3.28084
                 QMessageBox.information(ventana, "Resultado", f"El resultado es: {round(resultado,2)} pies")
+       
     except ValueError:
-        QMessageBox.warning(ventana, "Error", "Por favor, ingrese un número válido.")
+        if entrada1.text() == "":
+            QMessageBox.warning(ventana, "Error", "El campo de entrada está vacío. Por favor, ingrese un número.")
 
         # Creacion de la aplicación 
 app = QApplication(sys.argv)
